@@ -20,7 +20,15 @@ public class main {
                 .toList();
         int resultadoSoma = numerosPares.stream().reduce(0, somar);
 
+        // Desafio 03
+        Predicate<Integer> isPositivo = numero -> numero > 0;
+
+        List<Integer> listaNumerosPositivos = numeros.stream()
+        .filter(isPositivo)
+        .collect(Collectors.toList());
+
         System.out.println("Lista ordem numérica: " + ordenado);
         System.out.println("A soma dos números pares é: " + resultadoSoma);
+        System.out.println("Lista dos números positivos: " + listaNumerosPositivos);
     }
 }
