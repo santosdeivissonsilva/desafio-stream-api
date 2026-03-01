@@ -77,6 +77,11 @@ public class main {
                 .map(numero -> numero * numero) // Calcula o quadrado de cada número
                 .reduce(0, Integer::sum); // Soma todos os quadrados
 
+        
+        // Desafio 12 - Encontrar o produto de todos os números da lista:
+        int produto = numeros.stream()
+                .reduce(1, (a, b) -> a * b); // Multiplica todos os números
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -88,5 +93,6 @@ public class main {
         System.out.println("Desafio 09 - Todos os números da lista são distintos? " + todosDistintos);
         System.out.println("Desafio 10 - Lista de números ímpares múltiplos de 3 ou de 5: " + listaImparesMultiplos3Ou5);
         System.out.println("Desafio 11 - Soma dos quadrados de todos os números da lista: " + somaQuadrados);
+        System.out.println("Desafio 12 - Produto de todos os números da lista: " + produto);
     }
 }
