@@ -124,6 +124,10 @@ public class main {
                 .filter(isPrimo) // Filtra os números que são primos
                 .toList();
 
+        // Desafio 18 - Verificar se todos os números da lista são iguais:
+        boolean todosIguais = numeros.stream()
+                .allMatch(numero -> numero == numeros.get(0)); // Verifica se todos os números são iguais ao primeiro número da lista
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -141,5 +145,6 @@ public class main {
         System.out.println("Desafio 15 - A lista contém pelo menos um número negativo? " + contemNegativo);
         System.out.println("Desafio 16 - Lista de números pares: " + listaPares + " e lista de números ímpares: " + listaImpares);
         System.out.println("Desafio 17 - Lista de números primos: " + listaPrimos);
+        System.out.println("Desafio 18 - Todos os números da lista são iguais? " + todosIguais);
     }
 }
