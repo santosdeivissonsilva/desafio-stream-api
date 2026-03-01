@@ -119,6 +119,11 @@ public class main {
                 .filter(numero -> numero % 2 != 0) // Filtra os números que são ímpares
                 .toList();
 
+        // Desafio 17 - Filtrar os números primos da lista:
+        List<Integer> listaPrimos = numeros.stream()
+                .filter(isPrimo) // Filtra os números que são primos
+                .toList();
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -135,5 +140,6 @@ public class main {
         System.out.println("Desafio 14 - Maior número primo da lista: " + maiorNumeroPrimo);
         System.out.println("Desafio 15 - A lista contém pelo menos um número negativo? " + contemNegativo);
         System.out.println("Desafio 16 - Lista de números pares: " + listaPares + " e lista de números ímpares: " + listaImpares);
+        System.out.println("Desafio 17 - Lista de números primos: " + listaPrimos);
     }
 }
