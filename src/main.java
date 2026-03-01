@@ -82,6 +82,12 @@ public class main {
         int produto = numeros.stream()
                 .reduce(1, (a, b) -> a * b); // Multiplica todos os números
 
+
+        // Desafio 13 - Filtrar os números que estão dentro de um intervalo (entre 5 e 10):
+        List<Integer> listaIntervalo = numeros.stream()
+                .filter(numero -> numero >= 5 && numero <= 10) 
+                .toList();
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -94,5 +100,6 @@ public class main {
         System.out.println("Desafio 10 - Lista de números ímpares múltiplos de 3 ou de 5: " + listaImparesMultiplos3Ou5);
         System.out.println("Desafio 11 - Soma dos quadrados de todos os números da lista: " + somaQuadrados);
         System.out.println("Desafio 12 - Produto de todos os números da lista: " + produto);
+        System.out.println("Desafio 13 - Lista de números dentro do intervalo (entre 5 e 10): " + listaIntervalo);
     }
 }
