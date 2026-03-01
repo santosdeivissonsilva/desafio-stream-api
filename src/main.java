@@ -66,6 +66,12 @@ public class main {
                 .distinct() // Retira os números repetidos
                 .count() == numeros.size(); // Verifica se o número de elementos é igual ao número de elementos da lista original
 
+
+        // Desafio 10 - Agrupar os valores ímpares múltiplos de 3 ou de 5:
+        List<Integer> listaImparesMultiplos3Ou5 = numeros.stream()
+                .filter(numero -> numero % 3 == 0 || numero % 5 == 0) // Filtra os números que são múltiplos de 3 ou de 5
+                .toList();
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -75,5 +81,6 @@ public class main {
         System.out.println("Desafio 07 - Segundo maior número da lista: " + segundoMaiorNumero);
         System.out.println("Desafio 08 - Soma dos dígitos de todos os números da lista: " + listaDigitos);
         System.out.println("Desafio 09 - Todos os números da lista são distintos? " + todosDistintos);
+        System.out.println("Desafio 10 - Lista de números ímpares múltiplos de 3 ou de 5: " + listaImparesMultiplos3Ou5);
     }
 }
