@@ -18,16 +18,23 @@ public class main {
         int resultadoSoma = listaNumerosPares.stream().reduce(0, somar);
 
         // Desafio 03 - Verifique se todos os números da lista são positivos:
-        Predicate<Integer> isPositivo = numero -> numero > 0;
+        Predicate<Integer> isNegativo = numero -> numero < 0;
 
-        List<Integer> listaNumerosPositivos = numeros.stream()
-        .filter(isPositivo)
-        .toList();
+        List<Integer> listaNumerosNegativos = numeros.stream()
+                .filter(isNegativo)
+                .toList();
+
+        boolean possuiNegativos;
+        if (listaNumerosNegativos.isEmpty()) {
+            possuiNegativos = false;
+        } else {
+            possuiNegativos = true;
+        }
 
         // Desafio 05 - Calcule a média dos números maiores que 5:
         Predicate<Integer> isMaior5 = numero -> numero > 5;
 
-        List<Integer> listaNumerosMaior5 = numeros.stream().filter(isMaior5).toList();
+        double mediaNumerosMaior5 = numeros.stream().filter(isMaior5).reduce(0, Integer::sum) / numeros.stream().filter(isMaior5).count();
 
         // Desafio 6 - Verificar se a lista contém algum número maior que 10:
         boolean isMaior10 = numeros.stream().allMatch(numero -> numero > 10);
@@ -41,13 +48,12 @@ public class main {
                 .orElse(null); // Retorna null caso não encontre nenhum número
 
 
-        System.out.println("Lista ordem numérica: " + listaNumerosOrdenados);
-        System.out.println("A soma dos números pares é: " + resultadoSoma);
-        System.out.println("Lista dos números positivos: " + listaNumerosPositivos);
-        System.out.println("Lista de números pares: " + listaNumerosPares);
-        System.out.println("Lista dos números maiores do que 5: " + listaNumerosMaior5);
-        System.out.println("Existem números na lista maiores do que 10? " + isMaior10);
-        System.out.println("Segundo maior número da lista" + segundoMaiorNumero);
-
+        System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
+        System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
+        System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
+        System.out.println("Desafio 04 - Lista de números pares: " + listaNumerosPares);
+        System.out.println("Desafio 05 - Média dos números maiores que 5: " + mediaNumerosMaior5);
+        System.out.println("Desafio 06 - Existem números na lista maiores do que 10? " + isMaior10);
+        System.out.println("Desafio 07 - Segundo maior número da lista: " + segundoMaiorNumero);
     }
 }
