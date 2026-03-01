@@ -88,6 +88,24 @@ public class main {
                 .filter(numero -> numero >= 5 && numero <= 10) 
                 .toList();
 
+        // Desafio 14 - Encontrar o maior número primo da lista: 
+        Predicate<Integer> isPrimo = numero -> {
+            if (numero <= 1) {
+                return false;
+            }
+            for (int i = 2; i <= Math.sqrt(numero); i++) {
+                if (numero % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        int maiorNumeroPrimo = numeros.stream()
+                .filter(isPrimo) // Filtra os números que são primos
+                .max(Integer::compare) // Encontra o maior número primo
+                .orElse(0); // Retorna 0 caso não encontre nenhum número primo
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -101,5 +119,6 @@ public class main {
         System.out.println("Desafio 11 - Soma dos quadrados de todos os números da lista: " + somaQuadrados);
         System.out.println("Desafio 12 - Produto de todos os números da lista: " + produto);
         System.out.println("Desafio 13 - Lista de números dentro do intervalo (entre 5 e 10): " + listaIntervalo);
+        System.out.println("Desafio 14 - Maior número primo da lista: " + maiorNumeroPrimo);
     }
 }
