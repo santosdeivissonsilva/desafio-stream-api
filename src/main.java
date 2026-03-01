@@ -111,6 +111,14 @@ public class main {
         boolean contemNegativo = numeros.stream()
                 .anyMatch(numero -> numero < 0); // Verifica se a lista contém algum número negativo
 
+        // Desafio 16 - Agrupar os números em pares e ímpares:
+        List<Integer> listaPares = numeros.stream()
+                .filter(numero -> numero % 2 == 0) // Filtra os números que são pares
+                .toList();
+        List<Integer> listaImpares = numeros.stream()
+                .filter(numero -> numero % 2 != 0) // Filtra os números que são ímpares
+                .toList();
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -126,5 +134,6 @@ public class main {
         System.out.println("Desafio 13 - Lista de números dentro do intervalo (entre 5 e 10): " + listaIntervalo);
         System.out.println("Desafio 14 - Maior número primo da lista: " + maiorNumeroPrimo);
         System.out.println("Desafio 15 - A lista contém pelo menos um número negativo? " + contemNegativo);
+        System.out.println("Desafio 16 - Lista de números pares: " + listaPares + " e lista de números ímpares: " + listaImpares);
     }
 }
