@@ -61,6 +61,11 @@ public class main {
                 .mapToInt(Integer::parseInt) // Converte o caracter para um inteiro
                 .sum(); // Soma todos os inteiros
 
+        // Desafio 9 - Verificar se todos os números da lista são distintos (não se repetem):
+        boolean todosDistintos = numeros.stream()
+                .distinct() // Retira os números repetidos
+                .count() == numeros.size(); // Verifica se o número de elementos é igual ao número de elementos da lista original
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -69,5 +74,6 @@ public class main {
         System.out.println("Desafio 06 - Existem números na lista maiores do que 10? " + isMaior10);
         System.out.println("Desafio 07 - Segundo maior número da lista: " + segundoMaiorNumero);
         System.out.println("Desafio 08 - Soma dos dígitos de todos os números da lista: " + listaDigitos);
+        System.out.println("Desafio 09 - Todos os números da lista são distintos? " + todosDistintos);
     }
 }
