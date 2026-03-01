@@ -106,6 +106,11 @@ public class main {
                 .max(Integer::compare) // Encontra o maior número primo
                 .orElse(0); // Retorna 0 caso não encontre nenhum número primo
 
+
+        // Desafio 15 - Verificar se a lista contém pelo menos um número negativo:
+        boolean contemNegativo = numeros.stream()
+                .anyMatch(numero -> numero < 0); // Verifica se a lista contém algum número negativo
+
         System.out.println("Desafio 01 - Lista ordem numérica: " + listaNumerosOrdenados);
         System.out.println("Desafio 02 - A soma dos números pares é: " + resultadoSoma);
         System.out.println("Desafio 03 - A lista contém números negativos? " + possuiNegativos);
@@ -120,5 +125,6 @@ public class main {
         System.out.println("Desafio 12 - Produto de todos os números da lista: " + produto);
         System.out.println("Desafio 13 - Lista de números dentro do intervalo (entre 5 e 10): " + listaIntervalo);
         System.out.println("Desafio 14 - Maior número primo da lista: " + maiorNumeroPrimo);
+        System.out.println("Desafio 15 - A lista contém pelo menos um número negativo? " + contemNegativo);
     }
 }
